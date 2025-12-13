@@ -7,10 +7,10 @@
 7            
 8            
 9
-10            if(rev>Integer.MAX_VALUE/10 ||(rev == Integer.MAX_VALUE && digit > 7)){
+10            if(rev>Integer.MAX_VALUE/10 ||(rev == Integer.MAX_VALUE/10 && digit > 7)){
 11                return 0;
 12            }
-13            if(rev<Integer.MIN_VALUE/10 ||(rev==Integer.MIN_VALUE && digit < -8)){
+13            if(rev<Integer.MIN_VALUE/10 ||(rev==Integer.MIN_VALUE/10 && digit < -8)){
 14                return 0;
 15            }
 16            rev = rev * 10 +digit;
