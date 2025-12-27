@@ -14,18 +14,14 @@
 14        if(head==NULL || head->next==NULL){
 15            return head;
 16        }
-17        stack<int>st;
-18        ListNode* temp=head;
-19        while(temp!=NULL){
-20            st.push(temp->val);
-21            temp=temp->next;
-22        }
-23        temp=head;
-24        while(temp!=NULL){
-25            temp->val=st.top();
-26            st.pop();
-27            temp=temp->next;
-28        }
-29        return head;
-30    }
-31};
+17        ListNode* prev=NULL;
+18        ListNode* curr=head;
+19        while(curr!=NULL){
+20            ListNode* temp=curr;
+21            curr=curr->next;
+22            temp->next=prev;
+23            prev=temp;
+24        }
+25        return prev;
+26    }
+27};
