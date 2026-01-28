@@ -16,23 +16,31 @@
 16            return head;
 17        }
 18
-19       ListNode prev = head;
-20       ListNode curr = head.next;
+19    //    ListNode prev = head;
+20    //    ListNode curr = head.next;
 21
-22       while(curr != null){
-23         ListNode nextNode = curr.next;
+22    //    while(curr != null){
+23    //      ListNode nextNode = curr.next;
 24
-25         curr.next = prev;
+25    //      curr.next = prev;
 26
 27
-28         prev =curr;
-29         curr = nextNode;
-30       }
+28    //      prev =curr;
+29    //      curr = nextNode;
+30    //    }
 31
-32       head.next = null;
+32    //    head.next = null;
 33
-34       return prev;
-35        
-36        
-37    }
-38}
+34    //    return prev;
+35
+36    ListNode newHead = reverseList(head.next);
+37
+38
+39    head.next.next = head;
+40    head.next = null;
+41
+42    return newHead;
+43        
+44        
+45    }
+46}
