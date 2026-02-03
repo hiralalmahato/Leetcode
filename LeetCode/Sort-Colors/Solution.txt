@@ -1,0 +1,25 @@
+1class Solution {
+2public:
+3    void sortColors(vector<int>& nums) {
+4        // sort(nums.begin(),nums.end());
+5        int low=0;
+6        int mid=0;
+7        int high=nums.size()-1;
+8        while(mid<=high){
+9            if(nums[mid]==0){
+10                swap(nums[mid],nums[low]);
+11                mid++;
+12                low++;
+13            }else if(nums[mid]==1){
+14                mid++;
+15            }else{
+16                swap(nums[mid],nums[high]);
+17                high--;
+18            }
+19        }
+20
+21        
+22        
+23        
+24    }
+25};
