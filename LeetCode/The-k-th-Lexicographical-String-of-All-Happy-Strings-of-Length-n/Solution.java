@@ -1,0 +1,1 @@
+No two identical squads can stand next to each other
