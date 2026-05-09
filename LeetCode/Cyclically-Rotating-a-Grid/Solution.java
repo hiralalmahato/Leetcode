@@ -1,0 +1,1 @@
+min(rows, cols) / 2
