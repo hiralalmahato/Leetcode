@@ -1,0 +1,1 @@
+next_element = previous element×(rowIndex−position+1) / position
