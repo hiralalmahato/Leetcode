@@ -1,39 +1,62 @@
-1class Solution {
+1
 2
-3    // Function to calculate total hours needed at speed 'k'
-4    private long hoursTaken(int[] piles, int k) {
-5        long total = 0;
-6        for (int pile : piles) {
-7            total += (pile + k - 1) / k;  // ceil division
-8        }
-9        return total;
+3class Solution{
+4
+5public long hoursTaken(int[] piles,int k){
+6    long total = 0;
+7    for(int pile:piles){
+8        total += (pile + k - 1)/k;
+9
 10    }
-11
-12    public int minEatingSpeed(int[] piles, int h) {
-13
-14        // find search boundaries
-15        int low = 1;
-16        int high = 0;
-17        for (int pile : piles) {
-18            high = Math.max(high, pile);
-19        }
-20
-21        int ans = high;
-22
-23        // binary search
-24        while (low <= high) {
-25            int mid = low + (high - low) / 2;
+11    return total;
+12
+13    
+14}
+15 public int minEatingSpeed(int[] piles, int h) {
+16    int low = 1;
+17    int high = 0;
+18    for (int pile : piles) {
+19        high = Math.max(high, pile);
+20    }
+21
+22    int ans = high;
+23
+24    while(low<=high){
+25       int mid = low + (high - low) /2;
 26
-27            long hours = hoursTaken(piles, mid);
+27       long hours  =  hoursTaken(piles,mid);
 28
-29            if (hours <= h) {
-30                ans = mid;        // speed works → try smaller
-31                high = mid - 1;
-32            } else {
-33                low = mid + 1;    // too slow → increase speed
-34            }
-35        }
-36        return ans;
-37    }
-38}
+29       if(hours <= h){
+30          ans = mid;
+31          high = mid -1;
+32
+33       }else{
+34        low = mid + 1;
+35       }
+36    }
+37    return ans;
+38
 39
+40 }
+41}
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
