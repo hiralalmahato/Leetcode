@@ -5,14 +5,17 @@
 5        int maxi  = Integer.MIN_VALUE;
 6
 7        for(int num:nums){
-8            sum += num;
-9            maxi = Math.max(sum,maxi);
-10            if(sum<0){
-11                sum = 0;
-12            }
-13        }
-14        return maxi;
-15
-16        
-17    }
-18}
+8            
+9            sum += num;
+10            
+11            maxi = Math.max(sum,maxi);
+12            if(sum<0){
+13                sum = 0;
+14            }
+15            
+16        }
+17        return maxi;
+18
+19        
+20    }
+21}
