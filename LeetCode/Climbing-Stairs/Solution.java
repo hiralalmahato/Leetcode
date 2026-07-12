@@ -4,14 +4,14 @@
 4        
 5        if(n==2) return 2;
 6
-7        int [] num = new int[n];
+7        int [] num = new int[n+1];
 8
-9        num[0] =1;
-10        num[1] =2;
+9        num[1] =1;
+10        num[2] =2;
 11
-12        for(int i=2;i<n;i++){
+12        for(int i=3;i<=n;i++){
 13            num[i] = num[i-2] + num[i-1];
 14        }
-15        return num[n-1];
+15        return num[n];
 16    }
 17}
