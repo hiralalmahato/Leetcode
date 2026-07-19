@@ -1,0 +1,42 @@
+1class Solution {
+2
+3    public int solveMem(int[]coins,int amount,int[]dp){
+4        if(amount==0){
+5            return 0;
+6        }
+7        
+8        if(amount<0){
+9            return Integer.MAX_VALUE;
+10        }
+11
+12        if(dp[amount] != -1){
+13            return dp[amount];
+14        }
+15
+16
+17        int  mini = Integer.MAX_VALUE;
+18
+19        for(int i=0;i<coins.length;i++){
+20            int ans = solveMem(coins,amount-coins[i],dp);
+21            if(ans != Integer.MAX_VALUE){
+22                mini = Math.min(mini,1 + ans);
+23            }
+24        }
+25        dp[amount] =  mini;
+26        return dp[amount];
+27    }
+28    public int coinChange(int[] coins, int amount) {
+29
+30        int[]dp =  new int [amount+1];
+31        Arrays.fill(dp,-1);
+32
+33        int ans =  solveMem(coins,amount,dp);
+34
+35        if(ans==Integer.MAX_VALUE){
+36            return -1;
+37        }else{
+38            return ans;
+39        }
+40        
+41    }
+42}
