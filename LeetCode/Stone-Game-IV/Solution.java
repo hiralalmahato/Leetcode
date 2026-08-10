@@ -1,0 +1,1 @@
+dp[i - j * j] == False
