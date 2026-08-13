@@ -1,0 +1,1 @@
+[left_char, right_char, length, prefix, suffix, best]
